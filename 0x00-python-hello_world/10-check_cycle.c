@@ -7,7 +7,6 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *copy = list;
-	int status = 0;
 
 	while (list != NULL)
 	{
@@ -17,11 +16,8 @@ int check_cycle(listint_t *list)
 		else
 			break;
 		if (copy == list)
-		{
-			status = 1;
-			break;
-		}
+			return (1);
 		list = list->next;
 	}
-	return (status);
+	return (0);
 }
