@@ -7,7 +7,7 @@ else:
     lD = number % 10
 print("Last digit of ", end="")
 if lD > 5:
-    print("{:d} is {:d} and is greather than 5".format(number, lD))
+    print("{:d} is {:d} and is greater than 5".format(number, lD))
 elif lD < 6 and lD != 0:
     print("{:d} is {:d} and is less than 6 and not 0".format(number, lD))
 else:
