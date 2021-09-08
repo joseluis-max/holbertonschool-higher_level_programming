@@ -1,25 +1,28 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
-    from calculator_1 import add, sub, mul, div
-    len = len(argv)
-    operator = argv[2]
-    a = int(argv[1])
-    b = int(argv[3])
-    rel = 0
-    if len - 1 != 3:
+from calculator_1 import add, sub, mul, div
+
+
+def arg_calc(argv):
+    n = len(argv) - 1
+    if n != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-
-    if operator == '+':
-        rel = add(a, b)
-    elif operator == '-':
-        rel = sub(a, b)
-    elif operator == '*':
-        rel = mul(a, b)
-    elif operator == '/':
-        rel = div(a, b)
+    a = int(argv[1])
+    op = argv[2]
+    b = int(argv[3])
+    if op == '+':
+        print("{:d} {:s} {:d} = {:d}".format(a, op, b, add(a, b)))
+    elif op == '-':
+        print("{:d} {:s} {:d} = {:d}".format(a, op, b, sub(a, b)))
+    elif op == '*':
+        print("{:d} {:s} {:d} = {:d}".format(a, op, b, mul(a, b)))
+    elif op == '/':
+        print("{:d} {:s} {:d} = {:d}".format(a, op, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    print("{:d} {:s} {:d} = {:d}".format(a, operator, b, rel))
+
+
+if __name__ == "__main__":
+    import sys
+    arg_calc(sys.argv)
