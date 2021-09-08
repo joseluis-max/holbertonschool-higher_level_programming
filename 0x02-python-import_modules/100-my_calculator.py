@@ -6,7 +6,7 @@ if __name__ == "__main__":
     operator = argv[2]
     a = int(argv[1])
     b = int(argv[3])
-    rel = 0;
+    rel = 0
     if len - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
