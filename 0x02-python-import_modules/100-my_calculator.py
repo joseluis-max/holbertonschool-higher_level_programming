@@ -11,13 +11,13 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    if operator == "+":
+    if operator == '+':
         rel = add(a, b)
-    elif operator == "-":
+    elif operator == '-':
         rel = sub(a, b)
-    elif operator == "*":
+    elif operator == '*':
         rel = mul(a, b)
-    elif operator == "/":
+    elif operator == '/':
         rel = div(a, b)
     else:
         print("Unknown operator. Available operators: +, -, * and /")
