@@ -27,5 +27,7 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		copy = copy->next;
 	}
+	if (*head == NULL)
+		*head = node;
 	return (node);
 }
