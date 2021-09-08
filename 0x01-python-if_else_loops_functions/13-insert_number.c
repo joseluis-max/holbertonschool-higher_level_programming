@@ -22,11 +22,6 @@ listint_t *insert_node(listint_t **head, int number)
 	node->next = NULL;
 	while (copy != NULL)
 	{
-		if (copy == NULL)
-		{
-			copy = node;
-			break;
-		}
 		if (copy->next == NULL)
 		{
 			copy->next = node;
@@ -45,6 +40,10 @@ listint_t *insert_node(listint_t **head, int number)
 			break;
 		}
 		copy = copy->next;
+	}
+	if (copy == NULL)
+	{
+		copy = node;
 	}
 	return (node);
 }
