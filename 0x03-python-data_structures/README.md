@@ -43,6 +43,53 @@ __List data type methods__
 >>> queue                           # Remaining queue in order of arrival
 deque(['Michael', 'Terry', 'Graham'])
 ```
+__List Comprehensions__
 
+Provide a consise way to create lists.
+Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
 
+> **__NOTE:__** A list comprehension consists of brackets containing an expression followed by a for clause, then zero or more for or if clauses.
 
+``` python
+>>> squeare = [x**2 for x in range(10)]
+    squeare [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+- [x] We can make concatenation
+- [x] List are a mutable type
+- [x] List can be indexed and sliced
+
+__The del statement__
+
+Remove a item from a list given its index instead of its value, can also be used to remove slices from a list or clear entire list, or delete entire variables
+
+``` python
+>>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+>>> del a[0]
+>>> a
+[1, 66.25, 333, 333, 1234.5]
+>>> del a[2:4]
+>>> a
+[1, 66.25, 1234.5]
+>>> del a[:]
+>>> a
+[]
+>>> del a
+```
+
+__Tuples and Sequences__
+
+Is a number of values separated by commas.
+Tuples are immutable, and usually contain a heterogeneous sequence of elements that are accessed via unpacking or indexing (or even by attribute in the case of namedtuples)
+
+``` python
+>>> t = 12345, 54321, 'hello!'
+>>> t2 = (12345, 54321, 'hello!')
+>>> # empty tuple
+>>> empty = ()
+>>> # single element
+>>> singleton = 'Hola',                           # <-- note trailing comma
+```
+- [x] Tuples may be nested
+- [x] Tuples are inmutable
+- [x] Tuples can contain mutable objects
