@@ -22,6 +22,7 @@ def char(char):
 def roman_to_int(roman_string):
         num = 0
         i = 0
+        flag = 0
         if type(roman_string) != str or roman_string == None or roman_string == "":
                 return None
         
@@ -33,6 +34,9 @@ def roman_to_int(roman_string):
                         _c = " "
 
                 if c == 'I':
+                        print(flag)
+                        if flag == 3:
+                                return None
                         if _c == 'V':
                                 num += char(c + _c)
                                 i += 1
@@ -41,8 +45,10 @@ def roman_to_int(roman_string):
                                 i += 1
                         else:
                                 num += char(c)
+                        flag += 1
                 elif c == 'V':
                         num += char(c)
+                        flag = 0
                 elif c == 'X':
                         if _c == 'L':
                                 num += char(c + _c)
@@ -52,8 +58,10 @@ def roman_to_int(roman_string):
                                 i += 1
                         else:
                                 num += char(c)
+                        flag = 0
                 elif c == 'L':
                         num += char(c)
+                        flag = 0
                 elif c == 'C':
                         if _c == 'D':
                                 num += char(c + _c)
@@ -63,9 +71,12 @@ def roman_to_int(roman_string):
                                 i += 1
                         else:
                                 num += char(c)
+                        flag = 0
                 elif c == 'D':
                         num += char(c)
+                        flag = 0
                 elif c == 'M':
                         num += char(c)
+                        flag = 0
                 i += 1
         return num
