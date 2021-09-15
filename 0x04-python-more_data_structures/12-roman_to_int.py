@@ -21,10 +21,11 @@ def char(char):
 
 def roman_to_int(roman_string):
         num = 0
-        if type(roman_string) != str or roman_string == None:
+        i = 0
+        if type(roman_string) != str or roman_string == None or roman_string == "":
                 return None
         
-        for i in range(len(roman_string)):
+        while len(roman_string) > i:
                 c = roman_string[i]
                 if len(roman_string) > i + 1:
                         _c = roman_string[i + 1]
@@ -59,10 +60,12 @@ def roman_to_int(roman_string):
                                 i += 1
                         elif _c == 'M':
                                 num += char(c + _c)
+                                i += 1
                         else:
                                 num += char(c)
                 elif c == 'D':
                         num += char(c)
                 elif c == 'M':
                         num += char(c)
+                i += 1
         return num
