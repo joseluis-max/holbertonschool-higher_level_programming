@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Crate a class that define a square with methods and setter, getter, print, my_print advanced """
+""" Crate a class that define a square with methods
+    and setter, getter, print, my_print advanced """
 
 
 class Square:
