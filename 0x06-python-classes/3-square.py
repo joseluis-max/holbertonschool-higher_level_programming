@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Create a class that define a square and method for calculate the are """
+
+
 class Square:
     """
     Square define a square
