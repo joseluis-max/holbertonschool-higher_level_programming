@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Crate a class that define a square with methods and setter and getter"""
+
+
 class Square:
     """
     Square define a square
@@ -69,9 +72,7 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        """
-        Print a square of # with the same long of size
-        """
+        """ Print a square of # with the same long of size """
 
         if self.__size != 0:
             for n in range(0, self.__size):
