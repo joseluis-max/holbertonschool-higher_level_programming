@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Create a class that define a square with exception """
+
+
 class Square:
     """
     Square define a square
