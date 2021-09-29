@@ -119,7 +119,7 @@ class Square:
                 print('\n' * self.__position[1], end="")
             for n in range(0, self.__size):
                 for s in range(0, self.position[0]):
-                    print(" ", end=" ")
+                    print(" ", end="")
                 for m in range(0, self.__size):
                     print("#", end="")
                 print()
