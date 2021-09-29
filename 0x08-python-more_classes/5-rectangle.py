@@ -54,6 +54,10 @@ class Rectangle:
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
+    def __del__(self):
+        """Print message when instance is delete"""
+        print("Bye rectangle...")
+
     @property
     def width(self):
         """
