@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+""" Test-driven development
+    matrix_divided - Arg: 
+        matrix: list of list
+        div: divided number
+"""
+
 def matrix_divided(matrix, div):
+    """
+    divides all elements of a matrix by a number.
+    """
     rel = []
     long = len(matrix[0])
     for i in range(len(matrix)):

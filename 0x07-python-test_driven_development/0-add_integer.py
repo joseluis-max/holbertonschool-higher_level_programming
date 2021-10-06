@@ -8,14 +8,6 @@
 def add_integer(a, b=98):
     """ 
     Return sum of two integers
-    
-    Args:
-        a: int or float (required)
-        b: int or float (default 98)
-
-    Exp: 
-        TypeError:
-            When not is a or b not is integer 
     """
     
     if type(a) is int or type(a) is float:
