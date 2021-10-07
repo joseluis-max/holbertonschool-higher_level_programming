@@ -47,7 +47,7 @@ def is_int_or_float(matrix):
 def is_empty(matrix):
     """
     Check if matrix is Empty
-        Args: 
+        Args:
             matrix: list
     """
     if len(matrix) == 0:
@@ -62,7 +62,7 @@ def is_empty(matrix):
 def is_list_of_lists(matrix):
     """
     Check if matrix is a list of lists
-        Args: 
+        Args:
             matrix: list
     """
     for item in matrix:
@@ -74,7 +74,7 @@ def is_list_of_lists(matrix):
 def matrix_mul(m_a, m_b):
     """
     Multiplies 2 matrices
-        Arg: 
+        Arg:
             m_a: list of lists with int or floats
             m_b: list of lists with int of floats
     """
