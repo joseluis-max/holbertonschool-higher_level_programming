@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" 
+"""
 Test-driven development
-    text_indentation - Arg: 
+    text_indentation - Arg:
         text: str
 """
+
 
 def text_indentation(text):
     """

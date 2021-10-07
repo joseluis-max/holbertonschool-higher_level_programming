@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" 
+"""
     Test-driven development
-    print_square - Arg: 
+    print_square - Arg:
         size: int
 """
+
 
 def print_square(size):
     """
