@@ -42,6 +42,3 @@ Using text_indentation
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
-
-
-    Hello dear friends

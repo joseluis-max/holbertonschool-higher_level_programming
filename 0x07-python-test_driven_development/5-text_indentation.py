@@ -9,13 +9,17 @@ def text_indentation(text):
     """
     Put double \n after :, ?, .
     """
-    if type(text) is str:
-        for i in range(len(text)):
-            if text[i] in [".", "?", ":"]:
-                print(text[i], end="")
-                print("\n")
-            else:
-                if text[i - 1] not in [".", "?", ":"]:
-                    print(text[i], end="")
-    else:
+    if type(text) is not str:
         raise TypeError("text must be a string")
+    flag = True
+    for c in text:
+        if c == " " and flag:
+            continue
+        elif flag:
+            flag = False
+        if c not in [".", ":", "?"]:
+            print(c, end="")
+            continue
+        elif not flag:
+            print(c, end="\n\n")
+            flag = True
