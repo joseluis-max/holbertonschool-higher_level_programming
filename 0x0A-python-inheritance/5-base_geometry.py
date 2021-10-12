@@ -3,6 +3,6 @@
 
 
 class BaseGeometry:
-        """BaseClass"""
-        
-        pass
+    """BaseClass"""
+
+    pass
