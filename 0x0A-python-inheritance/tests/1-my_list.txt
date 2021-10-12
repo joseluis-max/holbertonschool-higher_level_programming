@@ -15,5 +15,5 @@ Using my_list
 
     >>> MyList.append()
     Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
+    ....
     TypeError: unbound method list.append() needs an argument
