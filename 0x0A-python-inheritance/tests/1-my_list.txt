@@ -11,3 +11,9 @@ Using my_list
     Traceback (most recent call last):
     ...
     TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+
+    >>> MyList.append()
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: unbound method list.append() needs an argument
