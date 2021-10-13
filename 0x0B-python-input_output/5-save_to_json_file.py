@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ Write object representation json string in a file """
-
 import json
 
 
