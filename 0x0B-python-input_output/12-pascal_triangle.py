@@ -4,6 +4,8 @@
 
 def pascal_triangle(n):
     """ Pascal Triangle """
+    if n <= 0:
+        return []
     pt = [[1]]
     trow = [1]
     y = [0]
