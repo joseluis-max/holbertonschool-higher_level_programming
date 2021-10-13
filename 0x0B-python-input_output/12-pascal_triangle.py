@@ -3,6 +3,7 @@
 
 
 def pascal_triangle(n):
+    """ Pascal Triangle """
     pt = [[1]]
     trow = [1]
     y = [0]
