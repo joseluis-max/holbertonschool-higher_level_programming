@@ -115,3 +115,13 @@ class Rectangle(Base):
                     self.__x = kwargs.get(key)
                 if key == "y":
                     self.__y = kwargs.get(key)
+
+    def to_dictionary(self):
+        d = {
+            'id': self.__dict__['id'],
+            'with': self.__dict__['_Rectangle__width'],
+            'height': self.__dict__['_Rectangle__height'],
+            'x': self.__dict__['_Rectangle__x'],
+            'y': self.__dict__['_Rectangle__y'],
+        }
+        return d
