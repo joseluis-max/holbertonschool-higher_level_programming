@@ -119,7 +119,7 @@ class Rectangle(Base):
     def to_dictionary(self):
         d = {
             'id': self.__dict__['id'],
-            'with': self.__dict__['_Rectangle__width'],
+            'width': self.__dict__['_Rectangle__width'],
             'height': self.__dict__['_Rectangle__height'],
             'x': self.__dict__['_Rectangle__x'],
             'y': self.__dict__['_Rectangle__y'],

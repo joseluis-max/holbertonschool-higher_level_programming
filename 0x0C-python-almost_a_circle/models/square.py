@@ -45,3 +45,12 @@ class Square(Rectangle):
                     self.x = kwargs.get(key)
                 if key == "y":
                     self.y = kwargs.get(key)
+
+    def to_dictionary(self):
+        d = {
+            'id': self.__dict__['id'],
+            'x': self.__dict__['_Rectangle__x'],
+            'size': self.__dict__['_Rectangle__width'],
+            'y': self.__dict__['_Rectangle__y'],
+        }
+        return d
