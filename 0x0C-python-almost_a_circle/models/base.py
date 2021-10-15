@@ -32,3 +32,10 @@ class Base:
                     s.append(item.__dict__)
                 file.write(Base.to_json_string(s))
 
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return "[]"
+        if len(json_string) == 0:
+            return "[]"
+        return json.loads(json_string)
