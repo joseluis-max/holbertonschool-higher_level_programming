@@ -2,6 +2,7 @@
 """Define a Base Constructor.
 """
 import json
+import csv
 
 
 class Base:
@@ -85,4 +86,42 @@ class Base:
         for dic in _list:
             ins = cls.create(**dic)
             instances.append(ins)
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        with open(cls.__name__ + ".csv", 'w', newline='') as csvfile:
+            spam_writer = csv.writer(csvfile, delimiter=',')
+            for dic in list_objs:
+                values = []
+                values.append(dic.__dict__.get("id"))
+                values.append(dic.__dict__.get("_Rectangle__width"))
+                if dic.__dict__.get("_Rectangle__width") != dic.__dict__.get("_Rectangle__height"):
+                    values.append(dic.__dict__.get("_Rectangle__height"))
+                values.append(dic.__dict__.get("_Rectangle__x"))
+                values.append(dic.__dict__.get("_Rectangle__y"))
+                spam_writer.writerow(values)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        dict_list = []
+        instances = []
+        with open(cls.__name__ + ".csv") as file:
+            for line in file:
+                line = line.strip().split(',')
+                d = {}
+                f = []
+                if cls.__name__ == "Rectangle":
+                    f = ["id", "width", "height", "x", "y"]
+                    for item, value in zip(f, line):
+                        d[item] = int(value)
+                    dict_list.append(d)
+                if cls.__name__ == "Square":
+                    f = ["id", "size", "x", "y"]
+                    for item, value in zip(f, line):
+                        d[item] = int(value)
+                    dict_list.append(d)
+            for dic in dict_list:
+                ins = cls.create(**dic)
+                instances.append(ins)
         return instances
