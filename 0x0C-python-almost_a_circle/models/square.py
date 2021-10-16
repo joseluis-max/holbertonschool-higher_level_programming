@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Define a square object.
 """
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
