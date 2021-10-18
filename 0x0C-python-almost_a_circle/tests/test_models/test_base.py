@@ -71,10 +71,6 @@ class TestBaseMethods(unittest.TestCase):
     def test_docstring_class(self):
         self.assertTrue(len(Base.__doc__) >= 1)
     
-    def test_docstring_fuction_class(self):
-        for f in self.base_funcs:
-            self.assertTrue(len(f[1].__doc__) >= 1)
-    
     def test_nb(self):
         """ Tests objects as a private attribute """
         b = Base(3)
