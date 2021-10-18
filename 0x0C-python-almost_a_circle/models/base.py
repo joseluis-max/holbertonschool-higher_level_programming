@@ -57,9 +57,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create a new instance of a cls class with dictionary values."""
-        rec = cls(1, 1)
-        rec.update(**dictionary)
-        return rec
+        if dictionary is not None:
+            dummy = cls(1, 1)
+            dummy.update(**dictionary)
+            return dummy
 
     @classmethod
     def load_from_file(cls):
