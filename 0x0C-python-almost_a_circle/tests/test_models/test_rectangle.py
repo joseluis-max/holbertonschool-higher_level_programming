@@ -1,5 +1,6 @@
 import unittest
 from models.rectangle import Rectangle
+from models import rectangle
 
 
 class TestRectangleMethod(unittest.TestCase):
@@ -110,6 +111,10 @@ class TestRectangleMethod(unittest.TestCase):
         self.assertEqual(new_obj.area(), 6)
         with self.assertRaises(TypeError):
             Rectangle.area(float('inf'), 5)
+    
+    def test_docstring(self):
+        self.asserTrue(len(Rectangle.__doc__) >= 1)
+        self.asserTrue(len(rectangle.__doc__) >= 1)
 
 
 if __name__ == '__main__':
