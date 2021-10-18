@@ -61,6 +61,7 @@ class Base:
             dummy = cls(1, 1)
             dummy.update(**dictionary)
             return dummy
+        return None
 
     @classmethod
     def load_from_file(cls):
