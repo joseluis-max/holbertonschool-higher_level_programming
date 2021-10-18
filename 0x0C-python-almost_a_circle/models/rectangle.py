@@ -19,7 +19,6 @@ class Rectangle(Base):
         ValueError: width, height, y or x are less(or equal) that 0
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -40,6 +39,7 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+        super().__init__(id)
 
     def __str__(self):
         """String Representation Object.
