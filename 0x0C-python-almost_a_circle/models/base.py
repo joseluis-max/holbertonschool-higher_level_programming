@@ -57,7 +57,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create a new instance of a cls class with dictionary values."""
-        if dictionary is not None:
+        if dictionary is not None or len(dictionary) == 0:
             dummy = cls(1, 1)
             dummy.update(**dictionary)
             return dummy
