@@ -34,15 +34,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def __str__(self):
-        """String Representation Object.
-
-            Returns:
-                String representation object
-        """
-        return "[Rectangle] ({}) {}/{} - {}/{}"\
-            .format(self.id, self.__x, self.__y, self.__width, self.__height)
-
     @property
     def width(self):
         """Getter width.
@@ -150,6 +141,15 @@ class Rectangle(Base):
                 print(" ", end="")
             print("#" * self.__width, end="")
             print()
+
+    def __str__(self):
+        """String Representation Object.
+
+            Returns:
+                String representation object
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """Update attributes of instance object.
