@@ -44,18 +44,14 @@ class Base:
             if list_objs is None or len(list_objs) == 0:
                 file.write("[]")
             else:
-                s = []
-                for item in list_objs:
-                    s.append(item.to_dictionary())
+                s = [item.to_dictionary() for item in list_objs]
                 file.write(Base.to_json_string(s))
 
     @staticmethod
     def from_json_string(json_string):
         """Convert json string representation in a dictionary."""
-        if json_string is None:
-            return "[]"
-        if len(json_string) == 0:
-            return "[]"
+        if json_string is None or len(json_string):
+            return []
         return json.loads(json_string)
 
     @classmethod
