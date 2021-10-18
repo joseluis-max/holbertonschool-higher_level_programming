@@ -27,33 +27,11 @@ class Rectangle(Base):
             x = x int
             y = y int
             id = int
-
-        Raises:
-            TypeError:
-                width or height not a integer
-            ValueError:
-                width, height, x and less o equal than 0
         """
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = width
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = height
-        if type(x) is not int:
-            raise TypeError("x must must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = x
-        if type(y) is not int:
-            raise TypeError("x must must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     def __str__(self):
