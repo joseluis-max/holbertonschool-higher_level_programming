@@ -1,7 +1,9 @@
+#!/usr/bin/python3
 import unittest
+import pycodestyle
 from models.square import Square
 from models.rectangle import Rectangle
-
+from models.base import Base
 
 class TestBaseMethods(unittest.TestCase):
     def test_01_case_instance_Square_success(self):
@@ -60,6 +62,38 @@ class TestBaseMethods(unittest.TestCase):
         new_obj2 = new_obj1.create(**dictionary)
         new_obj2.x = 15
         self.assertEqual(new_obj2.x, 15)
+
+    def test_pep8(self):
+        style = pycodestyle.StyleGuide(quiet=True)
+        result = style.check_files(['models/base.py'])
+        self.assertEqual(result.total_errors, 0)
+
+    def test_docstring_class(self):
+        self.assertTrue(len(Base.__doc__) >= 1)
+    
+    def test_docstring_fuction_class(self):
+        for f in self.base_funcs:
+            self.assertTrue(len(f[1].__doc__) >= 1)
+    
+    def test_nb(self):
+        """ Tests objects as a private attribute """
+        b = Base(3)
+        with self.assertRaises(AttributeError):
+            print(b.nb_objects)
+        with self.assertRaises(AttributeError):
+            print(b.__nb_objects)
+
+    def test_empty_json_string(self):
+        """ Send empty string to json function """
+        json_s = Base.to_json_string([])
+        self.assertTrue(type(json_s) is str)
+        self.assertEqual(json_s, "[]")
+    
+    def test_None_to_json_String(self):
+        """ Send none to json function """
+        json_s = Base.to_json_string(None)
+        self.assertTrue(type(json_s) is str)
+        self.assertEqual(json_s, "[]")
 
 
 if __name__ == '__main__':
