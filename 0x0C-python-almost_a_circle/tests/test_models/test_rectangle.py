@@ -113,8 +113,8 @@ class TestRectangleMethod(unittest.TestCase):
             Rectangle.area(float('inf'), 5)
     
     def test_docstring(self):
-        self.asserTrue(len(Rectangle.__doc__) >= 1)
-        self.asserTrue(len(rectangle.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.__doc__) >= 1)
+        self.assertTrue(len(rectangle.__doc__) >= 1)
 
 
 if __name__ == '__main__':
