@@ -68,7 +68,7 @@ class Rectangle(Base):
         return self.__y
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """Setter width.
 
             Args:
@@ -77,14 +77,14 @@ class Rectangle(Base):
                 TypeError: width not is a integer
                 ValueError: width is less than 0
         """
-        if type(width) is not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        if width <= 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = width
+        self.__width = value
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         """Setter height.
 
             Args:
@@ -94,14 +94,14 @@ class Rectangle(Base):
                 ValueError: height is less than 0
         """
 
-        if type(height) is not int:
+        if type(value) is not int:
             raise TypeError("height must be an integer")
-        if height <= 0:
+        if value <= 0:
             raise ValueError("height must be > 0")
-        self.__height = height
+        self.__height = value
 
     @x.setter
-    def x(self, x):
+    def x(self, value):
         """Setter x.
 
         Args:
@@ -110,14 +110,14 @@ class Rectangle(Base):
             TypeError:x not is a integer
             ValueError: x is less than or equal to 0
         """
-        if type(x) is not int:
+        if type(value) is not int:
             raise TypeError("x must must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
-        self.__x = x
+        self.__x = value
 
     @y.setter
-    def y(self, y):
+    def y(self, value):
         """Setter y.
 
         Args:
@@ -126,11 +126,11 @@ class Rectangle(Base):
             TypeError: y not is a integer
             ValueError: y is less than or equal to 0
         """
-        if type(y) is not int:
+        if type(value) is not int:
             raise TypeError("x must must be an integer")
-        if y < 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
-        self.__y = y
+        self.__y = value
 
     def area(self):
         """Calculate area rectangle.
