@@ -19,6 +19,7 @@ class Rectangle(Base):
         ValueError: width, height, y or x are less(or equal) that 0
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Init the instance """
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
