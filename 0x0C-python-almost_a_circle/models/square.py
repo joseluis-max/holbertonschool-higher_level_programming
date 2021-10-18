@@ -58,19 +58,14 @@ class Square(Rectangle):
         """
         if args or len(args) > 0:
             for i in range(len(args)):
-                # id
-                if i == 2:
+                if i == 0:
                     self.id = args[i]
-                # size
-                if i == 3:
-                    print(args[i])
+                if i == 1:
                     self.width = args[i]
                     self.height = args[i]
-                # x
-                if i == 1:
+                if i == 2:
                     self.x = args[i]
-                # y
-                if i == 0:
+                if i == 3:
                     self.y = args[i]
         else:
             for key in kwargs:
