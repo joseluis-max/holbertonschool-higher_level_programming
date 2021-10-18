@@ -28,11 +28,11 @@ class Rectangle(Base):
             y = y int
             id = int
         """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     def __str__(self):
         """String Representation Object.
