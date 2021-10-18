@@ -37,7 +37,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Save dictionaries objects representation in a file like json strings."""
+        """Save dictionaries objects representation
+        in a file like json strings.
+        """
         with open(cls.__name__ + ".json", "w") as file:
             if len(list_objs) == 0:
                 file.write("[]")
@@ -76,8 +78,8 @@ class Base:
             create new instances of cls with values directories
 
             Returns:
-                A list with instances of cls with values update
-                to values dictionaries
+                A list with instances of cls with
+                values update to values dictionaries
         """
         instances = []
         try:
@@ -92,13 +94,15 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """Save dictionaries objects representation in a csv file"""
         with open(cls.__name__ + ".csv", 'w', newline='') as csvfile:
             spam_writer = csv.writer(csvfile, delimiter=',')
             for dic in list_objs:
                 values = []
                 values.append(dic.__dict__.get("id"))
                 values.append(dic.__dict__.get("_Rectangle__width"))
-                if dic.__dict__.get("_Rectangle__width") != dic.__dict__.get("_Rectangle__height"):
+                if dic.__dict__.get("_Rectangle__width") \
+                        != dic.__dict__.get("_Rectangle__height"):
                     values.append(dic.__dict__.get("_Rectangle__height"))
                 values.append(dic.__dict__.get("_Rectangle__x"))
                 values.append(dic.__dict__.get("_Rectangle__y"))
@@ -106,13 +110,18 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Load dictionaries from csv file and create
+        new instances of cls with values directories
+
+            Returns:
+                A list with new instances of cls with values from dictionaries
+        """
         dict_list = []
         instances = []
         with open(cls.__name__ + ".csv") as file:
             for line in file:
                 line = line.strip().split(',')
                 d = {}
-                f = []
                 if cls.__name__ == "Rectangle":
                     f = ["id", "width", "height", "x", "y"]
                     for item, value in zip(f, line):
@@ -122,7 +131,7 @@ class Base:
                     f = ["id", "size", "x", "y"]
                     for item, value in zip(f, line):
                         d[item] = int(value)
-                    dict_list.adppend(d)
+                    dict_list.append(d)
             for dic in dict_list:
                 ins = cls.create(**dic)
                 instances.append(ins)
@@ -130,10 +139,12 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """Draw with Turtle module."""
         turtle.title("Squares and Rectangles")
         turtle.up()
         for rec in list_rectangles:
-            turtle.setpos(random.randrange(-200, 200), random.randrange(-200, 200))
+            turtle.setpos(random.randrange(-200, 200),
+                          random.randrange(-200, 200))
             turtle.down()
             turtle.fillcolor("yellow")
             turtle.begin_fill()
@@ -147,7 +158,8 @@ class Base:
             turtle.end_fill()
             turtle.up()
         for squ in list_squares:
-            turtle.setpos(random.randrange(-200, 200), random.randrange(-200, 200))
+            turtle.setpos(random.randrange(-200, 200),
+                          random.randrange(-200, 200))
             turtle.fillcolor("green")
             turtle.begin_fill()
             turtle.down()
@@ -161,5 +173,4 @@ class Base:
             turtle.left(90)
             turtle.end_fill()
             turtle.up()
-
         turtle.done()
