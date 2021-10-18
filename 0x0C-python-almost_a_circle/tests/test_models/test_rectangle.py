@@ -79,6 +79,38 @@ class TestRectangleMethod(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(8, 12, 5, -3, 26)
 
+    def test_19_case_without_values(self):
+        with self.assertRaises(TypeError):
+            Rectangle()
+
+    def test_20_case_whit_just_one_value(self):
+        with self.assertRaises(TypeError):
+            Rectangle(2)
+
+    def test_21_case_whit_more_than_one_value(self):
+        with self.assertRaises(TypeError):
+            Rectangle(5, 3, 7, 8, 9, 10)
+
+    def test_22_case_whit_float_values(self):
+        with self.assertRaises(TypeError):
+            Rectangle(3.8, 5.6, 7, 9)
+
+    def test_23_case_whit_list(self):
+        with self.assertRaises(TypeError):
+            Rectangle([7, 9], 3)
+
+    def test_24_case_check_area_result(self):
+        new_obj = Rectangle(3, 2)
+        self.assertEqual(new_obj.area(), 6)
+        with self.assertRaises(TypeError):
+            Rectangle.area()
+        self.assertEqual(new_obj.area(), 6)
+        with self.assertRaises(TypeError):
+            Rectangle.area(3, 5, 6)
+        self.assertEqual(new_obj.area(), 6)
+        with self.assertRaises(TypeError):
+            Rectangle.area(float('inf'), 5)
+
 
 if __name__ == '__main__':
     unittest.main()
