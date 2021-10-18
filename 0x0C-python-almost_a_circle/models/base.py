@@ -41,7 +41,7 @@ class Base:
         in a file like json strings.
         """
         with open(cls.__name__ + ".json", "w") as file:
-            if len(list_objs) == 0:
+            if list_objs is None or len(list_objs) == 0:
                 file.write("[]")
             else:
                 s = []
@@ -117,7 +117,6 @@ class Base:
                 A list with new instances of cls with values from dictionaries
         """
         dict_list = []
-        instances = []
         with open(cls.__name__ + ".csv") as file:
             for line in file:
                 line = line.strip().split(',')
@@ -132,10 +131,7 @@ class Base:
                     for item, value in zip(f, line):
                         d[item] = int(value)
                     dict_list.append(d)
-            for dic in dict_list:
-                ins = cls.create(**dic)
-                instances.append(ins)
-        return instances
+            return [cls.create(**dic) for dic in dict_list]
 
     @staticmethod
     def draw(list_rectangles, list_squares):
