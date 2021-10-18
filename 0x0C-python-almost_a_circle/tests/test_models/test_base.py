@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+from os import initgroups
 import unittest
 import pycodestyle
+import inspect
 from models.square import Square
 from models.rectangle import Rectangle
 from models.base import Base
+from models import base
 
 class TestBaseMethods(unittest.TestCase):
     def test_01_case_instance_Square_success(self):
@@ -68,6 +71,10 @@ class TestBaseMethods(unittest.TestCase):
         result = style.check_files(['models/base.py'])
         self.assertEqual(result.total_errors, 0)
 
+    def test_module(self):
+        """ Tests module """
+        self.assertTrue(len(base.__doc__) >= 1)
+
     def test_docstring_class(self):
         self.assertTrue(len(Base.__doc__) >= 1)
     
@@ -91,6 +98,10 @@ class TestBaseMethods(unittest.TestCase):
         self.assertTrue(type(json_s) is str)
         self.assertEqual(json_s, "[]")
 
+    @classmethod
+    def setUpClass(cls):
+        """ Set up for tests """
+        cls.base_funcs = inspect.getmembers(Base, inspect.isfunction)
 
 if __name__ == '__main__':
     unittest.main()
