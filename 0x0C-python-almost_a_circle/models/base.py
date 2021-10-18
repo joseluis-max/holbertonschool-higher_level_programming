@@ -3,6 +3,8 @@
 """
 import json
 import csv
+import turtle
+import random
 
 
 class Base:
@@ -120,8 +122,44 @@ class Base:
                     f = ["id", "size", "x", "y"]
                     for item, value in zip(f, line):
                         d[item] = int(value)
-                    dict_list.append(d)
+                    dict_list.adppend(d)
             for dic in dict_list:
                 ins = cls.create(**dic)
                 instances.append(ins)
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        turtle.title("Squares and Rectangles")
+        turtle.up()
+        for rec in list_rectangles:
+            turtle.setpos(random.randrange(-200, 200), random.randrange(-200, 200))
+            turtle.down()
+            turtle.fillcolor("yellow")
+            turtle.begin_fill()
+            turtle.forward(rec.width)
+            turtle.left(90)
+            turtle.forward(rec.height)
+            turtle.left(90)
+            turtle.forward(rec.width)
+            turtle.left(90)
+            turtle.forward(rec.height)
+            turtle.end_fill()
+            turtle.up()
+        for squ in list_squares:
+            turtle.setpos(random.randrange(-200, 200), random.randrange(-200, 200))
+            turtle.fillcolor("green")
+            turtle.begin_fill()
+            turtle.down()
+            turtle.forward(squ.width)
+            turtle.left(90)
+            turtle.forward(squ.width)
+            turtle.left(90)
+            turtle.forward(squ.width)
+            turtle.left(90)
+            turtle.forward(squ.width)
+            turtle.left(90)
+            turtle.end_fill()
+            turtle.up()
+
+        turtle.done()

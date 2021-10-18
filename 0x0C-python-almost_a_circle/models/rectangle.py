@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from base import Base
+from models.base import Base
 """Define a Rectangle Object.
 """
 
@@ -160,7 +160,6 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update attributes of instance object.
         """
-        print("Update rectangle")
         if args and len(args) > 0:
             for i in range(len(args)):
                 if i == 0:
