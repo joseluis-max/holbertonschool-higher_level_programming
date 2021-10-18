@@ -46,14 +46,7 @@ class Base:
             else:
                 s = []
                 for item in list_objs:
-                    d = {
-                        'y': item.__dict__['_Rectangle__y'],
-                        'x': item.__dict__['_Rectangle__x'],
-                        'id': item.__dict__['id'],
-                        'width': item.__dict__['_Rectangle__width'],
-                        'height': item.__dict__['_Rectangle__height'],
-                    }
-                    s.append(d)
+                    s.append(item.to_dictionary())
                 file.write(Base.to_json_string(s))
 
     @staticmethod
