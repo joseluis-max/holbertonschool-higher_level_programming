@@ -4,4 +4,7 @@
 --    Results must be sorted in ascending order by the genre name
 --    You can use only one SELECT statement
 --    The database name will be passed as an argument of the mysql command
-
+SELECT name FROM tv_genres
+JOIN tv_show_genres ON genre_id = id
+WHERE show_id = (SELECT id FROM tv_shows
+                WHERE title = "Dexter");
