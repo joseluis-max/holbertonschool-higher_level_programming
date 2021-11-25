@@ -6,7 +6,6 @@
 --    Results must be sorted in descending order by the number of shows linked
 --    You can use only one SELECT statement
 --    The database name will be passed as an argument of the mysql command
-USE  hbtn_0d_tvshows;
 SELECT name as genre, COUNT(show_id) as number_of_shows FROM tv_genres
 JOIN tv_show_genres ON tv_show_genres.show_id = tv_genres.id
 GROUP BY show_id
