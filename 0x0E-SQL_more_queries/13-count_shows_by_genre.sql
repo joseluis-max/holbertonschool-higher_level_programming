@@ -7,6 +7,6 @@
 --    You can use only one SELECT statement
 --    The database name will be passed as an argument of the mysql command
 SELECT name AS genre, COUNT(show_id) AS number_of_shows FROM tv_genres
-JOIN tv_show_genres ON tv_show_genres.show_id = tv_genres.id
+JOIN tv_show_genres ON tv_show_genres.genres_id = tv_genres.id
 GROUP BY show_id
 ORDER BY number_of_shows DESC;
