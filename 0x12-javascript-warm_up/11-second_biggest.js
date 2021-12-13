@@ -5,11 +5,11 @@ let a = 0;
 let b = 0;
 
 for (const number of argv) {
-    if (!isNaN(parseInt(number))){
-        if (number > a) {
-            b = a;
-            a = number;
-        }
+  if (!isNaN(parseInt(number))) {
+    if (number > a) {
+      b = a;
+      a = number;
     }
+  }
 }
 console.log(b);
