@@ -3,5 +3,7 @@
  *  Repesent a Rectangle
  *  @constructor
  */
-const Rectangle = function () {};
+class Rectangle {
+
+}
 module.exports = Rectangle;
