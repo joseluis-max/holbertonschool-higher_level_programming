@@ -13,7 +13,7 @@ class Square extends Rectangle {
    */
   constructor (size) {
     super(size, size);
-    if (size > 0) {
+    if (size >= 0) {
       this.size = size;
     }
   }
