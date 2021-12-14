@@ -11,7 +11,7 @@ class Square extends Rectangle {
    * Create a new Square
    * @param { number } size - size square
    */
-  constructor (size) {
+  constructor (size = 0) {
     super(size, size);
     this.size = size;
   }
