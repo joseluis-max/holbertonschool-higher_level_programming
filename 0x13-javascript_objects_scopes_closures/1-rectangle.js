@@ -6,7 +6,7 @@
  * @property { number } height
  * - height rectangle
  */
-class Rectagle {
+class Rectangle {
 /**
  * Create a new Rectangle
  * @param { number } w - width Rectagle
@@ -18,4 +18,4 @@ class Rectagle {
   }
 }
 
-module.exports = Rectagle;
+module.exports = Rectangle;
