@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Script Select with MySQLdb all rows in state table the column name that start with N
+"""
+    Script Select with MySQLdb all rows in state
+    table the column name that start with N
 """
 if __name__ == '__main__':
     import MySQLdb
@@ -10,10 +12,11 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cursor = db.cursor()
-    num_rows = cursor.execute("""SELECT * FROM states WHERE name = \^N\ ORDER BY id ASC""")
+    num_rows = cursor.execute("""SELECT * FROM states
+                              WHERE name LIKE 'N%'
+                              ORDER BY id ASC""")
     rows = cursor.fetchall()
     for r in rows:
         print(r)
-    
     cursor.close()
     db.close()
