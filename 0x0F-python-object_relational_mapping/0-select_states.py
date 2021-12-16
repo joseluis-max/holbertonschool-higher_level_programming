@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Script Select with MySQLdb all rows in state table
+"""
 import MySQLdb
 import sys
 
