@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
     Script Select with MySQLdb all rows in state
-    table the column name that start with N
+    table the column name with a command value argument
 """
 if __name__ == '__main__':
     import MySQLdb
