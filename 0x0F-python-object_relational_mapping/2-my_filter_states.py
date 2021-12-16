@@ -14,7 +14,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
     num_rows = cursor.execute("""SELECT * FROM states
                               WHERE name LIKE %s
-                              ORDER BY id ASC""", sys.argv[4])
+                              ORDER BY id ASC""", (sys.argv[4],))
     rows = cursor.fetchall()
     for r in rows:
         print(r)
