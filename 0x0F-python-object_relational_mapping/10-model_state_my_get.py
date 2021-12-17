@@ -18,5 +18,5 @@ if __name__ == '__main__':
         print("Not found")
     else:
         for s in states:
-            print('{}: {}'.format(s.id, s.name))
+            print('{}'.format(s.id))
     session.close()
