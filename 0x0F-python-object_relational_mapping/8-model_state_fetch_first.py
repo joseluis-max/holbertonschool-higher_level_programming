@@ -7,11 +7,12 @@ from model_state import Base, State
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-engine = create_engine('mysql://{}:{}@localhost:3306/{}'
-                       .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-Base.metadata.create_all(engine)
-session = Session(engine)
-states = session.query(State).order_by(State.id).all()[0:1]
-for s in states:
-    print('{}: {}'.format(s.id, s.name))
-session.close()
+if __name__ == '__main__':
+    engine = create_engine('mysql://{}:{}@localhost:3306/{}'
+                        .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    Base.metadata.create_all(engine)
+    session = Session(engine)
+    states = session.query(State).order_by(State.id).all()[0:1]
+    for s in states:
+        print('{}: {}'.format(s.id, s.name))
+    session.close()
