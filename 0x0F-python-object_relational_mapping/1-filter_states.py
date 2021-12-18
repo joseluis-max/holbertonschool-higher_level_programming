@@ -14,7 +14,7 @@ if __name__ == '__main__':
                          db=sys.argv[3])
     cursor = db.cursor()
     num_rows = cursor.execute("""SELECT id, name FROM states
-                              WHERE name LIKE '[N]%'
+                              WHERE name LIKE i'N%'
                               ORDER BY id ASC""")
     rows = cursor.fetchall()
     for r in rows:
