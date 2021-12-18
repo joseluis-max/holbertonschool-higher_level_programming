@@ -1,6 +1,10 @@
 # Python ORM
 
 - **Why Python programming is awesome**
+
+    As a general-purpose language, Python is the single language that you may ever need for developing just about anything.
+
+    It can be used for the programming of the front end (client side) with which users interact and back end (server side) database of your website. It can be used for numerical and data analysis for scientific study and research. It can be used to develop artificial intelligence. It can be used to develop both online and offline applications from productivity tools, games and other type of app you can think off.
 - **How to connect to a MySQL database from a Python script**
 
 ```python
