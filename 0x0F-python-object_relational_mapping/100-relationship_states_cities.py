@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 if __name__ == '__main__':
     engine = create_engine('mysql://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all(engine, pool_pre_ping=True)
     session = Session(engine)
     new_state = State(name = 'California')
     new_state.cities.append(City(name = 'San Francisco'))
