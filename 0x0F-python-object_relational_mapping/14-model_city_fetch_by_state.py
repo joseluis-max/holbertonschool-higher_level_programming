@@ -11,11 +11,12 @@ from sqlalchemy import create_engine
 
 if __name__ == '__main__':
     engine = create_engine('mysql://{}:{}@localhost:3306/{}'
-                        .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
     session = Session(engine)
-    cities = session.query(State.name, City.id, City.name).join(City,
-    City.state_id == State.id).order_by(City.id).all()
+    cities = session.query(State.name, City.id, City.name)\
+                    .join(City, City.state_id == State.id)\
+                    .order_by(City.id).all()
     for c in cities:
         print('{}: ({}) {}'.format(c[0], c[1], c[2]))
     session.close()
