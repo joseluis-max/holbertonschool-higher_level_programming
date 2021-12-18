@@ -13,7 +13,7 @@ if __name__ == '__main__':
                          db=sys.argv[3])
     cursor = db.cursor()
     num_rows = cursor.execute("""SELECT * FROM states
-                              WHERE name LIKE %s
+                              WHERE name = %s
                               ORDER BY id ASC""", (sys.argv[4],))
     rows = cursor.fetchall()
     for r in rows:
