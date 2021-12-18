@@ -12,7 +12,7 @@ if __name__ == '__main__':
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
     session = Session(engine)
-    new_state = State(name='Lousiana')
+    new_state = State(name='Louisiana')
     session.add(new_state)
     session.commit()
     states = session.query(State).filter(State.name == 'Louisiana').all()
