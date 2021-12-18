@@ -3,9 +3,10 @@
     Script Select with MySQLdb all rows in state
     table the column name that start with N
 """
+import MySQLdb
+import sys
+
 if __name__ == '__main__':
-    import MySQLdb
-    import sys
 
     db = MySQLdb.connect(host="localhost",
                          user=sys.argv[1],
