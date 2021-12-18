@@ -12,6 +12,6 @@ class City (Base):
     """ Model City define a city object with relationship
     """
     __tablename__ = "cities"
-    id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, index=True, unique=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
