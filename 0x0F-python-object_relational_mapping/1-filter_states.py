@@ -13,7 +13,7 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cursor = db.cursor()
-    num_rows = cursor.execute("""SELECT * FROM states
+    num_rows = cursor.execute("""SELECT id, name FROM states
                               WHERE name LIKE 'N%'
                               ORDER BY id ASC""")
     rows = cursor.fetchall()
