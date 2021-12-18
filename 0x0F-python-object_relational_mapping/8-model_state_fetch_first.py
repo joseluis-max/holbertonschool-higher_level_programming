@@ -12,7 +12,7 @@ if __name__ == '__main__':
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
     session = Session(engine)
-    states = session.query(State).order_by(State.id).all()[0:1]
+    states = session.query(State).order_by(State.id).first()
     for s in states:
         print('{}: {}'.format(s.id, s.name))
     session.close()
