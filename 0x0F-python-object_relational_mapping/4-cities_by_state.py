@@ -10,13 +10,14 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cursor = db.cursor()
-    num_rows = cursor.execute("""SELECT cities.id, cities.name, states.name FROM cities
+    num_rows = cursor.execute("""SELECT cities.id, cities.name, states.name
+                                 FROM cities
                                  JOIN states ON states.id = cities.state_id
                                  ORDER BY id ASC
                                  """)
     rows = cursor.fetchall()
     for r in rows:
         print(r)
-    
+
     cursor.close()
     db.close()
