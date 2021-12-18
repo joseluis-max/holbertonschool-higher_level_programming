@@ -9,6 +9,8 @@ Base = declarative_base()
 
 
 class City (Base):
+    """ Model City define a city object with relationship
+    """
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
