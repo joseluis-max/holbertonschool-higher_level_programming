@@ -2,8 +2,6 @@
 """ Create file that contains the class definition of State
     and a instance of Base = declaratibe_base() with relationship
 """
-from enum import unique
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from relationship_city import Base
