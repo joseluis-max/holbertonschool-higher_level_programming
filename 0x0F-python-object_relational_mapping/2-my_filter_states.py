@@ -12,9 +12,9 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cursor = db.cursor()
-    num_rows = cursor.execute("""SELECT * FROM states
-                              WHERE name = %s
-                              ORDER BY id ASC""", (sys.argv[4],))
+    num_rows = cursor.execute("SELECT id, name FROM states \
+                              WHERE name = '{}' \
+                              ORDER BY id ASC".format(sys.argv[4]))
     rows = cursor.fetchall()
     for r in rows:
         print(r)
